@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,7 +56,7 @@ public class ProductController {
 
 	@Operation(summary = "Update a Product by Id")
 	@PutMapping("/{id}")
-	public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product productDetail) {
+	public ResponseEntity<Product> updateProduct(@PathVariable Long id, @Valid @RequestBody Product productDetail) {
 		return productService.findById(id).map(product -> {
 			product.setName(productDetail.getName());
 			product.setDescription(productDetail.getDescription());

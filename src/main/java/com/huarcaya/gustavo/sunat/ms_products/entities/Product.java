@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "productos")
@@ -15,12 +17,15 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotBlank(message = "name field is required")
 	@Column(name = "nombre")
 	private String name;
 
+	@NotBlank(message = "description field is required")
 	@Column(name = "descripcion")
 	private String description;
 
+	@NotNull(message = "price field is required")
 	@Column(name = "precio")
 	private Double price;
 
