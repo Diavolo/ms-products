@@ -1,6 +1,6 @@
 # ms-products
 
-![Swagger](./docs/swagger.png)
+![Swagger](./docs/img/swagger.png)
 
 ## Create image
 
