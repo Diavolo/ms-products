@@ -3,7 +3,7 @@
 ![Swagger](./docs/img/swagger.png)
 
 > [!IMPORTANT]
-> 👉 Check [DEPLOYMENT README](./docs/yaml/README.md) to view how to deploy it into Kubernetes.
+> 👉 Check [DEPLOYMENT README](./docs/yaml) to view how to deploy it into Kubernetes.
 
 ## Create image
 
