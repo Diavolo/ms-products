@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: products-app-deployment
+  namespace: products-app-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: products-app
+  template:
+    metadata:
+      labels:
+        app: products-app
+    spec:
+      containers:
+        - name: products-app
+          image: qqta/ms-products:0.1.0
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: products-app-configmap

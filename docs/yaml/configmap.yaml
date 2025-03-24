@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: products-app-configmap
+  namespace: products-app-ns
+data:
+  APP_ENV: "production"
+  AUTHOR: "Gustavo Huarcaya"
+  LOG_LEVEL: "INFO"
